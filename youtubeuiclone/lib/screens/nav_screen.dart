@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtubeuiclone/screens/home_screen.dart';
 
 class NavScreen extends StatefulWidget {
   const NavScreen({Key? key}) : super(key: key);
@@ -10,16 +11,37 @@ class NavScreen extends StatefulWidget {
 class _NavScreenState extends State<NavScreen> {
   int _selectedIndex = 0;
 
+  final _screens = [
+    HomeScreen(),
+    const Scaffold(body: Center(child: Text('Explore'))),
+    const Scaffold(body: Center(child: Text('Add'))),
+    const Scaffold(body: Center(child: Text('Subscriptions'))),
+    const Scaffold(body: Center(child: Text('Library'))),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: Stack(
+        children: _screens
+            .asMap()
+            .map((i, screen) => MapEntry(
+                  i,
+                  Offstage(
+                    offstage: _selectedIndex != i,
+                    child: screen,
+                  ),
+                ))
+            .values
+            .toList(),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         onTap: (i) => setState(() => _selectedIndex = i),
         selectedFontSize: 10.0,
         unselectedFontSize: 10.0,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
             activeIcon: Icon(Icons.home),
