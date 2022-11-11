@@ -40,3 +40,40 @@ class Video {
     required this.dislikes,
   });
 }
+
+final List<Video> videos = [
+  Video(
+    id: 'vk40g0ikMV0',
+    author: currentUser,
+    title: 'Anjay mabar bareng Ikmal',
+    thumbnailUrl:
+        'https://i.ytimg.com/vi/TvY6Kc95zyQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDixcV9CovvUFkN8ahFlDu7BQLcHg',
+    duration: '7:33',
+    timestamp: DateTime(2021, 3, 20),
+    viewCount: '10K',
+    likes: '354',
+    dislikes: '2',
+  ),
+  Video(
+    id: 'gh53j94mvK',
+    author: currentUser,
+    title: 'Ini kucing sakti coy',
+    thumbnailUrl: 'https://i.ytimg.com/vi_webp/NsUWXo8M7UA/maxresdefault.webp',
+    duration: '3:54',
+    timestamp: DateTime(2022, 1, 22),
+    viewCount: '25K',
+    likes: '878',
+    dislikes: '10',
+  ),
+  Video(
+    id: 'kj45k0f89s',
+    author: currentUser,
+    title: 'Orang Gila Orang Baik',
+    thumbnailUrl: 'https://pbs.twimg.com/media/FdVjvntVUAAjboA.png',
+    duration: '1:55',
+    timestamp: DateTime(2022, 9, 10),
+    viewCount: '160K',
+    likes: '2k',
+    dislikes: '542',
+  ),
+];
