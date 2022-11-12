@@ -55,7 +55,7 @@ final List<Video> videos = [
     dislikes: '2',
   ),
   Video(
-    id: 'gh53j94mvK',
+    id: 'gh53j94mvKx',
     author: currentUser,
     title: 'Ini kucing sakti coy',
     thumbnailUrl: 'https://i.ytimg.com/vi_webp/NsUWXo8M7UA/maxresdefault.webp',
@@ -66,7 +66,7 @@ final List<Video> videos = [
     dislikes: '10',
   ),
   Video(
-    id: 'kj45k0f89s',
+    id: 'kj45k0f8z9s',
     author: currentUser,
     title: 'Orang Gila Orang Baik',
     thumbnailUrl: 'https://pbs.twimg.com/media/FdVjvntVUAAjboA.png',
@@ -75,5 +75,44 @@ final List<Video> videos = [
     viewCount: '160K',
     likes: '2k',
     dislikes: '542',
+  ),
+];
+
+final List<Video> suggestedVideos = [
+  Video(
+    id: 'sd89s5g9jxvx',
+    author: currentUser,
+    title: 'Pegal',
+    thumbnailUrl:
+        'https://www.farmaku.com/artikel/wp-content/uploads/2022/04/New-Project-33.jpg',
+    duration: '3:12',
+    timestamp: DateTime(2022, 10, 20),
+    viewCount: '6K',
+    likes: '54',
+    dislikes: '1',
+  ),
+  Video(
+    id: 'asd90sd7hb6',
+    author: currentUser,
+    title: 'Aduh Pegal',
+    thumbnailUrl:
+        'https://cdf.orami.co.id/unsafe/cdn-cas.orami.co.id/parenting/images/makanan-penyebab-pegal-linu.width-800.jpegquality-80.jpg',
+    duration: '4:32',
+    timestamp: DateTime(2022, 9, 20),
+    viewCount: '7K',
+    likes: '34',
+    dislikes: '8',
+  ),
+  Video(
+    id: 'vcj79d8d7d4',
+    author: currentUser,
+    title: 'Sangat Pegal',
+    thumbnailUrl:
+        'https://cdn-2.tstatic.net/jabar/foto/bank/images/peregangan.jpg',
+    duration: '9:54',
+    timestamp: DateTime(2022, 8, 20),
+    viewCount: '9K',
+    likes: '94',
+    dislikes: '8',
   ),
 ];

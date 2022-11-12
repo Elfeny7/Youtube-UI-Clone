@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:miniplayer/miniplayer.dart';
 import 'package:youtubeuiclone/data.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:youtubeuiclone/screens/nav_screen.dart';
@@ -6,9 +7,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class VideoCard extends StatelessWidget {
   final Video video;
+  final bool hasPadding;
+  final VoidCallback? onTap;
   const VideoCard({
     Key? key,
     required this.video,
+    this.hasPadding = false,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -16,22 +21,31 @@ class VideoCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         context.read(selectedVideoProvider).state = video;
+        context
+            .read(miniPlayerControllerProvider)
+            .state
+            .animateToHeight(state: PanelState.MAX);
+        if (onTap != null) onTap!();
       },
       child: Column(
         children: [
           Stack(
             children: [
-              Image.network(
-                video.thumbnailUrl,
-                height: 220.0,
-                width: double.infinity,
-                fit: BoxFit.cover,
+              Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: hasPadding ? 12.0 : 0),
+                child: Image.network(
+                  video.thumbnailUrl,
+                  height: 220.0,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
               Positioned(
                 bottom: 8.0,
-                right: 8.0,
+                right: hasPadding ? 20.0 : 8.0,
                 child: Container(
-                  padding: EdgeInsets.all(4.0),
+                  padding: const EdgeInsets.all(4.0),
                   color: Colors.black,
                   child: Text(
                     video.duration,
